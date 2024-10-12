@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="styles/output.css" />
+    <link rel="stylesheet" href="styles/input.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="module" src="/js/main.js"></script>
+  </head>
+  <body class="min-h-screen">
+    <header class="shadow">
+      <nav
+        class="w-full max-w-[1440px] mx-auto flex items-center justify-between gap-5 px-4 py-6"
+      >
+        <a
+          href="home.html"
+          class="text-[30px] sm:text-[35px] font-[900] italic"
+        >
+          UMI<span class="text-[#2b38d1]">NEX</span>
+        </a>
+        <div
+          class="hidden sm:flex items-center gap-4 text-black font-sembold text-[20px]"
+        >
+          <h1 class="text-sm text-gray-900 hover:text-gray-800 username"></h1>
+          <a href="home.html" class="text-sm text-gray-900 hover:text-gray-800">
+            Home
+          </a>
+          <a href="cart.html" class="text-sm text-gray-900 hover:text-gray-800">
+            Cart
+          </a>
+          <button class="text-sm text-gray-900 hover:text-gray-800" id="logout">
+            Sign out
+          </button>
+        </div>
+        <div class="sm:hidden">
+          <button
+            class="flex items-center px-3 py-2 text-gray-900 hover:text-gray-800 open-sidebar-btn"
+          >
+            <i class="fas fa-bars text-[22px]"></i>
+          </button>
+        </div>
+        <div
+          class="sidebar right-0 top-0 fixed h-full w-full max-w-[300px] bg-white z-50 p-5 hidden"
+        >
+          <div class="relative flex flex-col items-start gap-4">
+            <h1 class="text-sm text-gray-900 hover:text-gray-800 username"></h1>
+            <a
+              href="home.html"
+              class="text-sm text-gray-900 hover:text-gray-800"
+            >
+              Home
+            </a>
+            <a
+              href="cart.html"
+              class="text-sm text-gray-900 hover:text-gray-800"
+            >
+              Cart
+            </a>
+            <button
+              class="text-sm text-gray-900 hover:text-gray-800"
+              id="logout"
+            >
+              Sign out
+            </button>
+            <button
+              class="flex items-center px-3 py-2 text-gray-900 hover:text-gray-800 absolute top-0 right-0"
+              id="close-sidebar-btn"
+            >
+              <i class="fas fa-times text-[22px]"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="w-full max-w-[1440px] mx-auto px-4 py-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+        <div class="col-span-1 lg:col-span-2 relative h-[350px] md:h-[450px]">
+          <img
+            src="./assets/banner_1_1.webp"
+            alt="banner"
+            class="w-full h-full"
+          />
+          <div
+            class="absolute top-[50%] -translate-y-1/2 left-10 max-w-[350px] flex flex-col items-start gap-5"
+          >
+            <h1 class="text-[35px] font-bold text-white">
+              Trending Your New Style
+            </h1>
+            <button
+              class="bg-white text-sm text-slate-950 shadow border-none font-semibold px-3 py-2 rounded-full"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <div class="col-span-1 grid grid-cols-1 gap-2">
+          <div class="relative h-full">
+            <img src="./assets/img_1_1.avif" alt="" class="w-full h-full" />
+            <div
+              class="absolute top-[50%] -translate-y-1/2 left-8 max-w-[350px] flex flex-col items-start gap-5"
+            >
+              <h1 class="text-[23px] text-white">
+                Top Offer <br />
+                <span class="text-yellow-300">Ipad Pro</span> 128GB
+              </h1>
+            </div>
+          </div>
+          <div class="relative h-full">
+            <img src="./assets/img_1_2.avif" alt="" class="w-full h-full" />
+            <div
+              class="absolute top-[50%] -translate-y-1/2 left-8 max-w-[350px] flex flex-col items-start gap-5"
+            >
+              <h1 class="text-[23px] text-white">
+                Gamepad <br />
+                <span class="text-yellow-300">Sport Edition</span> 2022
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 products my-10"
+      ></div>
+    </main>
+
+    <div
+      id="notification"
+      class="mb-4 hidden p-3 rounded-lg text-white absolute top-10 left-[50%] -translate-x-1/2"
+    ></div>
+  </body>
+</html>

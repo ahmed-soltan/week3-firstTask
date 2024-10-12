@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="styles/output.css" />
+    <link rel="stylesheet" href="styles/input.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="min-h-screen">
+    <header class="shadow">
+      <nav
+        class="w-full max-w-[1440px] mx-auto flex items-center justify-between gap-5 px-4 py-6"
+      >
+        <a href="/" class="text-[30px] sm:text-[35px] font-[900] italic">
+          UMI<span class="text-[#2b38d1]">NEX</span>
+        </a>
+      </nav>
+    </header>
+    <main class="w-full max-w-[1440px] mx-auto px-4 py-6">
+      <div class="flex items-center justify-center w-full h-full">
+        <form method="post" id="loginForm" class="w-full max-w-[600px] border rounded-md border-slate-300 p-5 space-y-4">
+          
+          <div class="mb-4">
+            <label for="email" class="text-sm font-semibold text-gray-600">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:border-blue-400"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="text-sm font-semibold text-gray-600">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:border-blue-400"
+              required
+            />
+          </div>
+          <button type="submit" class="w-full rounded-md bg-[#2b38d1] text-white border-0 text-sm py-2 hover:bg-black">Submit</button>
+          <h1>Don't Have Account? <a href="register.html" class="text-cyan-600">Create Account</a></h1>
+        </form>
+      </div>
+    </main>
+
+    <div
+      id="notification"
+      class="mb-4 hidden p-3 rounded-lg text-white absolute top-10 left-[50%] -translate-x-1/2"
+    ></div>
+
+    <script type="module" src="/js/user.js"></script>
+  </body>
+</html>
