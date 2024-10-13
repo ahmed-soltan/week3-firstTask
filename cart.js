@@ -5,17 +5,6 @@ const CartTotalsContainer = document.getElementsByClassName("cart-totals");
 const EmptyCartContainer = document.getElementsByClassName("empty-cart");
 const logout = document.getElementById("logout");
 
-const openSidebarBtn = document.querySelector(".open-sidebar-btn");
-const closeSidebarBtn = document.querySelector("#close-sidebar-btn");
-
-export const openSidebar = openSidebarBtn.addEventListener("click", () => {
-  document.querySelector(".sidebar").classList.remove("hidden");
-});
-
-export const closeSidebar = closeSidebarBtn.addEventListener("click", () => {
-  document.querySelector(".sidebar").classList.add("hidden");
-});
-
 export class Cart {
   constructor() {
     const storedCart = localStorage.getItem("cart");
@@ -155,15 +144,15 @@ export class Cart {
 const cartObj = new Cart();
 
 const initPage = () => {
-    const path = window.location.pathname;
-    if (path === "/cart.html" && !localStorage.getItem("currentUser")) {
-      window.location.href = "/";
-    }
-  logout.addEventListener("click", () => {
-    localStorage.removeItem("currentUser");
+  const path = window.location.pathname;
+  if (path === "/cart.html" && !localStorage.getItem("currentUser")) {
     window.location.href = "/";
-  });
-  displayUsername()
+  }
+  logout.addEventListener("click", () => {
+      localStorage.removeItem("currentUser");
+      window.location.href = "/";
+    });
+  displayUsername();
   if (cartObj.cartData.items.length > 0) {
     CartProductsContainer[0].classList.add("border", "border-slate-200");
     CartTotalsContainer[0].classList.add("border", "border-slate-200");
@@ -210,5 +199,23 @@ const initPage = () => {
     EmptyCartContainer[0].appendChild(EmptyCart);
   }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const openSidebarBtn = document.querySelector("#open-sidebar-btn");
+  const closeSidebarBtn = document.querySelector("#close-sidebar-btn");
+
+  if (openSidebarBtn) {
+    openSidebarBtn.addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.remove("hidden");
+    });
+  }
+
+  if (closeSidebarBtn) {
+    closeSidebarBtn.addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.add("hidden");
+    });
+  }
+});
+
 
 window.onload = initPage;

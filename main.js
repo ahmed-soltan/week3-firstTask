@@ -1,22 +1,10 @@
 import { Cart } from "./cart.js";
 import { productsData } from "./data.js";
 
-const productContainer = document.getElementsByClassName("products");
+const productContainer = document.querySelector(".products");
 
 const logout = document.getElementById("logout");
 const notification = document.getElementById("notification");
-
-const openSidebarBtn = document.querySelector(".open-sidebar-btn");
-const closeSidebarBtn = document.querySelector("#close-sidebar-btn");
-
-export const openSidebar = openSidebarBtn.addEventListener("click", () => {
-  document.querySelector(".sidebar").classList.remove("hidden");
-});
-
-export const closeSidebar = closeSidebarBtn.addEventListener("click", () => {
-  document.querySelector(".sidebar").classList.add("hidden");
-});
-
 
 
 export const showNotification = (message, type = "success") => {
@@ -50,7 +38,7 @@ class Products {
   }
 
   showData = () => {
-    productContainer[0].innerHTML = "";
+    productContainer.innerHTML = "";
     this.products.forEach((product) => {
       const productItem = document.createElement("div");
       productItem.classList.add(
@@ -71,7 +59,7 @@ class Products {
           <button class="w-full rounded-md bg-[#2b38d1] text-white border-0 text-sm py-2 hover:bg-black add-cart" data-id=${product.id}>Add to Cart</button>
         </div>
       `;
-      productContainer[0].appendChild(productItem);
+      productContainer.appendChild(productItem);
     });
 
     this.addEventListeners();
@@ -128,4 +116,23 @@ const initPage = () => {
   productObj.showData();
   displayUsername()
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const openSidebarBtn = document.querySelector(".open-sidebar-btn");
+  const closeSidebarBtn = document.querySelector("#close-sidebar-btn");
+
+  if (openSidebarBtn) {
+    openSidebarBtn.addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.remove("hidden");
+    });
+  }
+
+  if (closeSidebarBtn) {
+    closeSidebarBtn.addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.add("hidden");
+    });
+  }
+});
+
+
 window.onload = initPage;

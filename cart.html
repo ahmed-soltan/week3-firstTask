@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart page</title>
-    <link rel="stylesheet" href="styles/output.css" />
-    <link rel="stylesheet" href="styles/input.css" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="input.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -39,9 +39,10 @@
             Sign out
           </button>
         </div>
-        <div class="sm:hidden">
+        <div class="flex sm:hidden">
           <button
-            class="flex items-center px-3 py-2 text-gray-900 hover:text-gray-800 open-sidebar-btn"
+          id="open-sidebar-btn"
+            class="block items-center px-3 py-2 text-gray-900 hover:text-gray-800"
           >
             <i class="fas fa-bars text-[22px]"></i>
           </button>
@@ -98,6 +99,6 @@
       class="mb-4 hidden p-3 rounded-lg text-white absolute top-10 left-[50%] -translate-x-1/2"
     ></div>
 
-    <script type="module" src="/js/cart.js"></script>
+    <script type="module" src="cart.js"></script>
   </body>
 </html>

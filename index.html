@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login page</title>
-    <link rel="stylesheet" href="styles/output.css" />
-    <link rel="stylesheet" href="styles/input.css" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="input.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -26,8 +26,11 @@
     </header>
     <main class="w-full max-w-[1440px] mx-auto px-4 py-6">
       <div class="flex items-center justify-center w-full h-full">
-        <form method="post" id="loginForm" class="w-full max-w-[600px] border rounded-md border-slate-300 p-5 space-y-4">
-          
+        <form
+          method="post"
+          id="loginForm"
+          class="w-full max-w-[600px] border rounded-md border-slate-300 p-5 space-y-4"
+        >
           <div class="mb-4">
             <label for="email" class="text-sm font-semibold text-gray-600">
               Email
@@ -52,8 +55,16 @@
               required
             />
           </div>
-          <button type="submit" class="w-full rounded-md bg-[#2b38d1] text-white border-0 text-sm py-2 hover:bg-black">Submit</button>
-          <h1>Don't Have Account? <a href="register.html" class="text-cyan-600">Create Account</a></h1>
+          <button
+            type="submit"
+            class="w-full rounded-md bg-[#2b38d1] text-white border-0 text-sm py-2 hover:bg-black"
+          >
+            Submit
+          </button>
+          <h1>
+            Don't Have Account?
+            <a href="register.html" class="text-cyan-600">Create Account</a>
+          </h1>
         </form>
       </div>
     </main>
@@ -63,6 +74,6 @@
       class="mb-4 hidden p-3 rounded-lg text-white absolute top-10 left-[50%] -translate-x-1/2"
     ></div>
 
-    <script type="module" src="/js/user.js"></script>
+    <script type="module" src="user.js"></script>
   </body>
 </html>
