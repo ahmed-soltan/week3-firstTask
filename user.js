@@ -87,3 +87,15 @@ export class User {
     return null;
   }
 }
+
+const initPage = () => {
+  const path = window.location.pathname;
+  if (
+    (path === "/register.html" || path === "/") &&
+    localStorage.getItem("currentUser")
+  ) {
+    return (window.location.href = "/home.html");
+  }
+};
+
+window.onload = initPage;
